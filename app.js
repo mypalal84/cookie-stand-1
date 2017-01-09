@@ -14,19 +14,13 @@ var firstAndPike = {
   }
 };
 
-var test = firstAndPike.customersPerHour();
-console.log(firstAndPike.results);
-
-var stores = [firstAndPike];
-console.log(stores + 'stores generates');
-
+firstAndPike.customersPerHour();
+var times = ['6am:', '7am:', '8am:', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 var mylist = document.getElementById('data-list');
 
-for (var i = 0; i < stores.length; i++){
-  var customers = stores[i].resutls;
-  console.log(customers + 'customers generates');
+for (var i = 0; i < firstAndPike.results.length; i++){
   var listEl = document.createElement('li'); //create a new element on DOM (new li tag in html, theoretically)
-  listEl.textContent = customers + ' is at index' + i; //adds text to li tag
+  listEl.textContent = firstAndPike[i] + ' is at index' + i; //adds text to li tag
   mylist.appendChild(listEl); //adding as child to ul tag in notes.html
 }
 
