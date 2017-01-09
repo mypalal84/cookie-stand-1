@@ -1,6 +1,6 @@
 'use strict';
 
-var times = ['6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:', '8pm:'];
+var times = ['6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:', '8pm:', 'Total:'];
 
 //objects
 var firstAndPike = {
@@ -16,6 +16,14 @@ var firstAndPike = {
       console.log(numCookies);
       this.results.push(numCookies);
     }
+  },
+  cookiesSum: function() {
+    var sum = 0;
+    for(var j = 0; j < this.results.length; j++) {
+      sum = sum + this.results[j];
+    }
+    this.results.push(sum);
+    console.log(sum);
   }
 };
 
@@ -32,6 +40,14 @@ var seaTac = {
       console.log(numCookies);
       this.results.push(numCookies);
     }
+  },
+  cookiesSum: function() {
+    var sum = 0;
+    for(var j = 0; j < this.results.length; j++) {
+      sum = sum + this.results[j];
+    }
+    this.results.push(sum);
+    console.log(sum);
   }
 };
 
@@ -48,6 +64,14 @@ var seattleCenter = {
       console.log(numCookies);
       this.results.push(numCookies);
     }
+  },
+  cookiesSum: function() {
+    var sum = 0;
+    for(var j = 0; j < this.results.length; j++) {
+      sum = sum + this.results[j];
+    }
+    this.results.push(sum);
+    console.log(sum);
   }
 };
 
@@ -64,6 +88,14 @@ var capitolHill = {
       console.log(numCookies);
       this.results.push(numCookies);
     }
+  },
+  cookiesSum: function() {
+    var sum = 0;
+    for(var j = 0; j < this.results.length; j++) {
+      sum = sum + this.results[j];
+    }
+    this.results.push(sum);
+    console.log(sum);
   }
 };
 
@@ -80,12 +112,21 @@ var alki = {
       console.log(numCookies);
       this.results.push(numCookies);
     }
+  },
+  cookiesSum: function() {
+    var sum = 0;
+    for(var j = 0; j < this.results.length; j++) {
+      sum = sum + this.results[j];
+    }
+    this.results.push(sum);
+    console.log(sum);
   }
 };
 
 //calling object.functions and DOM code
 //FirstandPike
 firstAndPike.cookiesPerHour();
+firstAndPike.cookiesSum();
 
 var mylist = document.getElementById('firstandpike');
 
@@ -97,6 +138,7 @@ for (var i = 0; i < firstAndPike.results.length; i++){
 
 //SeaTac
 seaTac.cookiesPerHour();
+seaTac.cookiesSum();
 
 var mylist = document.getElementById('seatac');
 
@@ -108,6 +150,7 @@ for (var i = 0; i < seaTac.results.length; i++){
 
 //seattleCenter
 seattleCenter.cookiesPerHour();
+seattleCenter.cookiesSum();
 
 var mylist = document.getElementById('seattlecenter');
 
@@ -119,6 +162,7 @@ for (var i = 0; i < seattleCenter.results.length; i++){
 
 //capitolHill
 capitolHill.cookiesPerHour();
+capitolHill.cookiesSum();
 
 var mylist = document.getElementById('capitolhill');
 
@@ -130,6 +174,7 @@ for (var i = 0; i < capitolHill.results.length; i++){
 
 //Alki
 alki.cookiesPerHour();
+alki.cookiesSum();
 
 var mylist = document.getElementById('alki');
 
