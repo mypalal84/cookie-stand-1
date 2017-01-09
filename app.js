@@ -10,9 +10,9 @@ var firstAndPike = {
   results: [],
   cookiesPerHour: function() {
     for(var i = 0; i < 15; i++){
-      var randomNumber = Math.floor(Math.random() * (65 - 23) + 23);
+      var randomNumber = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
       console.log(randomNumber);
-      var numCookies = Math.floor(randomNumber * 6.3);
+      var numCookies = Math.floor(randomNumber * this.avgCookies);
       console.log(numCookies);
       this.results.push(numCookies);
     }
@@ -34,9 +34,9 @@ var seaTac = {
   results: [],
   cookiesPerHour: function() {
     for(var i = 0; i < 15; i++){
-      var randomNumber = Math.floor(Math.random() * (24 - 3) + 3);
+      var randomNumber = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
       console.log(randomNumber);
-      var numCookies = Math.floor(randomNumber * 1.2);
+      var numCookies = Math.floor(randomNumber * this.avgCookies);
       console.log(numCookies);
       this.results.push(numCookies);
     }
@@ -58,9 +58,9 @@ var seattleCenter = {
   results: [],
   cookiesPerHour: function() {
     for(var i = 0; i < 15; i++){
-      var randomNumber = Math.floor(Math.random() * (38 - 11) + 11);
+      var randomNumber = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
       console.log(randomNumber);
-      var numCookies = Math.floor(randomNumber * 3.7);
+      var numCookies = Math.floor(randomNumber * this.avgCookies);
       console.log(numCookies);
       this.results.push(numCookies);
     }
@@ -82,9 +82,9 @@ var capitolHill = {
   results: [],
   cookiesPerHour: function() {
     for(var i = 0; i < 15; i++){
-      var randomNumber = Math.floor(Math.random() * (38 - 20) + 20);
+      var randomNumber = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
       console.log(randomNumber);
-      var numCookies = Math.floor(randomNumber * 2.3);
+      var numCookies = Math.floor(randomNumber * this.avgCookies);
       console.log(numCookies);
       this.results.push(numCookies);
     }
@@ -106,9 +106,9 @@ var alki = {
   results: [],
   cookiesPerHour: function() {
     for(var i = 0; i < 15; i++){
-      var randomNumber = Math.floor(Math.random() * (16 - 2) + 2);
+      var randomNumber = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
       console.log(randomNumber);
-      var numCookies = Math.floor(randomNumber * 4.6);
+      var numCookies = Math.floor(randomNumber * this.avgCookies);
       console.log(numCookies);
       this.results.push(numCookies);
     }
