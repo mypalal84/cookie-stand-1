@@ -31,8 +31,8 @@ Store.prototype.cookiesPerHour = function() {
     var randomNumber = Math.round(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
     console.log(randomNumber + ' randomNumber generated');
     var numCookies = Math.round(randomNumber * this.avgCookies);
-    console.log(numCookies);
-    this.results.push(numCookies + ' numCookies generated');
+    console.log(numCookies + ' numCookies generated');
+    this.results.push(numCookies);
   }
 };
 
