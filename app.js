@@ -9,23 +9,26 @@ var firstAndPike = {
   avgCookies: 6.3,
   results: [],
   cookiesPerHour: function() {
-    for(var i = 0; i < 15; i++){
-      var randomNumber = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
+    for(var i = 0; i < times.length - 1; i++){
+      var randomNumber = Math.round(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
       console.log(randomNumber);
-      var numCookies = Math.floor(randomNumber * this.avgCookies);
+      var numCookies = Math.round(randomNumber * this.avgCookies);
       console.log(numCookies);
       this.results.push(numCookies);
     }
-  },
-  cookiesSum: function() {
-    var sum = 0;
-    for(var j = 0; j < this.results.length; j++) {
-      sum = sum + this.results[j];
-    }
-    this.results.push(sum);
-    console.log(sum);
   }
 };
+
+function cookiesSum() {
+  var sum = 0;
+  for(var j = 0; j < this.results.length; j++) {
+    sum += this.results[j];
+  }
+  this.results.push(sum);
+  console.log(sum);
+}
+
+firstAndPike.cookiesSum = cookiesSum; //creates cookiesSum method in firstAndPike
 
 var seaTac = {
   minCustomers: 3,
@@ -129,10 +132,14 @@ firstAndPike.cookiesPerHour();
 firstAndPike.cookiesSum();
 
 var mylist = document.getElementById('firstandpike');
+mylist.setAttribute('class', 'cookie-list');
 
 for (var i = 0; i < firstAndPike.results.length; i++){
   var listEl = document.createElement('li');
   listEl.textContent = times[i] + ' ' + firstAndPike.results[i];
+  if (i === firstAndPike.results.length - 1){
+    listEl.setAttribute('class', 'cookie-total');
+  }
   mylist.appendChild(listEl);
 }
 
