@@ -1,7 +1,34 @@
 body {
-  background: #FFB4A1;
+  background: #E8C284;
 }
 
-ul {
-  font-family: Verdana Arial sans-serif;
+table {
+  width: 80%;
+  margin: 20% 10% 5% 10%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: #fbf9f4;
+}
+
+th, td {
+  padding: 7px 10px 10px 10px;
+  border: 1px solid black;
+}
+
+th {
+  text-transform: uppercase;
+  text: bold;
+  text-align: left;
+}
+
+td {
+  text-align: right;
+}
+
+#logo {
+  float: left;
+}
+
+#main-header{
+  float:right;
 }
