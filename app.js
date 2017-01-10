@@ -29,10 +29,10 @@ console.log(alki + ' alki works');
 Store.prototype.cookiesPerHour = function() {
   for(var i = 0; i < times.length - 1; i++){
     var randomNumber = Math.round(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
-    console.log(randomNumber);
+    console.log(randomNumber + ' randomNumber generated');
     var numCookies = Math.round(randomNumber * this.avgCookies);
     console.log(numCookies);
-    this.results.push(numCookies);
+    this.results.push(numCookies + ' numCookies generated');
   }
 };
 
@@ -42,7 +42,7 @@ Store.prototype.cookiesSum = function() {
     sum += this.results[j];
   }
   this.results.push(sum);
-  console.log(sum);
+  console.log(sum + ' sum generated');
 };
 
 //calling object.methods and DOM code
