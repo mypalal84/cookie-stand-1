@@ -3,130 +3,49 @@
 var times = ['6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:', '8pm:', 'Total:'];
 
 //objects
-var firstAndPike = {
-  minCustomers: 23,
-  maxCustomers: 65,
-  avgCookies: 6.3,
-  results: [],
-  cookiesPerHour: function() {
-    for(var i = 0; i < times.length - 1; i++){
-      var randomNumber = Math.round(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
-      console.log(randomNumber);
-      var numCookies = Math.round(randomNumber * this.avgCookies);
-      console.log(numCookies);
-      this.results.push(numCookies);
-    }
+
+function Store(minCustomers, maxCustomers, avgCookies){
+  this.minCustomers = minCustomers;
+  this.maxCustomers = maxCustomers;
+  this.avgCookies = avgCookies;
+  this.results = [];
+}
+
+var firstAndPike = new Store(65, 23, 6.3);
+console.log(firstAndPike + ' firstAndPike works');
+
+var seaTac = new Store(3, 24, 1.2);
+console.log(seaTac + ' seaTac works');
+
+var seattleCenter = new Store(11, 38, 3.7);
+console.log(seattleCenter + ' seattleCenter works');
+
+var capitolHill = new Store(20, 38, 2.3);
+console.log(capitolHill + ' capitolHill works');
+
+var alki = new Store(2, 16, 4.6);
+console.log(alki + ' alki works');
+
+Store.prototype.cookiesPerHour = function() {
+  for(var i = 0; i < times.length - 1; i++){
+    var randomNumber = Math.round(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
+    console.log(randomNumber);
+    var numCookies = Math.round(randomNumber * this.avgCookies);
+    console.log(numCookies);
+    this.results.push(numCookies);
   }
 };
 
-function cookiesSum() {
+Store.prototype.cookiesSum = function() {
   var sum = 0;
   for(var j = 0; j < this.results.length; j++) {
     sum += this.results[j];
   }
   this.results.push(sum);
   console.log(sum);
-}
-
-firstAndPike.cookiesSum = cookiesSum; //creates cookiesSum method in firstAndPike
-
-var seaTac = {
-  minCustomers: 3,
-  maxCustomers: 24,
-  avgCookies: 1.2,
-  results: [],
-  cookiesPerHour: function() {
-    for(var i = 0; i < 15; i++){
-      var randomNumber = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
-      console.log(randomNumber);
-      var numCookies = Math.floor(randomNumber * this.avgCookies);
-      console.log(numCookies);
-      this.results.push(numCookies);
-    }
-  },
-  cookiesSum: function() {
-    var sum = 0;
-    for(var j = 0; j < this.results.length; j++) {
-      sum = sum + this.results[j];
-    }
-    this.results.push(sum);
-    console.log(sum);
-  }
 };
 
-var seattleCenter = {
-  minCustomers: 11,
-  maxCustomers: 38,
-  avgCookies: 3.7,
-  results: [],
-  cookiesPerHour: function() {
-    for(var i = 0; i < 15; i++){
-      var randomNumber = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
-      console.log(randomNumber);
-      var numCookies = Math.floor(randomNumber * this.avgCookies);
-      console.log(numCookies);
-      this.results.push(numCookies);
-    }
-  },
-  cookiesSum: function() {
-    var sum = 0;
-    for(var j = 0; j < this.results.length; j++) {
-      sum = sum + this.results[j];
-    }
-    this.results.push(sum);
-    console.log(sum);
-  }
-};
-
-var capitolHill = {
-  minCustomers: 20,
-  maxCustomers: 38,
-  avgCookies: 2.3,
-  results: [],
-  cookiesPerHour: function() {
-    for(var i = 0; i < 15; i++){
-      var randomNumber = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
-      console.log(randomNumber);
-      var numCookies = Math.floor(randomNumber * this.avgCookies);
-      console.log(numCookies);
-      this.results.push(numCookies);
-    }
-  },
-  cookiesSum: function() {
-    var sum = 0;
-    for(var j = 0; j < this.results.length; j++) {
-      sum = sum + this.results[j];
-    }
-    this.results.push(sum);
-    console.log(sum);
-  }
-};
-
-var alki = {
-  minCustomers: 2,
-  maxCustomers: 16,
-  avgCookies: 4.6,
-  results: [],
-  cookiesPerHour: function() {
-    for(var i = 0; i < 15; i++){
-      var randomNumber = Math.floor(Math.random() * (this.maxCustomers - this.minCustomers) + this.minCustomers);
-      console.log(randomNumber);
-      var numCookies = Math.floor(randomNumber * this.avgCookies);
-      console.log(numCookies);
-      this.results.push(numCookies);
-    }
-  },
-  cookiesSum: function() {
-    var sum = 0;
-    for(var j = 0; j < this.results.length; j++) {
-      sum = sum + this.results[j];
-    }
-    this.results.push(sum);
-    console.log(sum);
-  }
-};
-
-//calling object.functions and DOM code
+//calling object.methods and DOM code
 //FirstandPike
 firstAndPike.cookiesPerHour();
 firstAndPike.cookiesSum();
