@@ -1,6 +1,6 @@
 'use strict';
 
-var times = ['6am:', '7am:', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:', '8pm:', 'Total:'];
+var times = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
 
 //objects
 
@@ -45,17 +45,25 @@ Store.prototype.cookiesSum = function() {
   console.log(sum + ' sum generated');
 };
 
-//calling object.methods and DOM code
+//calling object.methods and DOM code - creates table
 //FirstandPike
+
+var myList = document.getElementById('times');
+
+for (var i = 0; i < times.length; i++){
+  var listEl = document.createElement('th');
+  listEl.textContent = times[i];
+  myList.appendChild(listEl);
+}
+
 firstAndPike.cookiesPerHour();
 firstAndPike.cookiesSum();
 
 var mylist = document.getElementById('firstandpike');
-mylist.setAttribute('class', 'cookie-list');
 
 for (var i = 0; i < firstAndPike.results.length; i++){
-  var listEl = document.createElement('li');
-  listEl.textContent = times[i] + ' ' + firstAndPike.results[i];
+  var listEl = document.createElement('td');
+  listEl.textContent = firstAndPike.results[i];
   if (i === firstAndPike.results.length - 1){
     listEl.setAttribute('class', 'cookie-total');
   }
@@ -69,8 +77,8 @@ seaTac.cookiesSum();
 var mylist = document.getElementById('seatac');
 
 for (var i = 0; i < seaTac.results.length; i++){
-  var listEl = document.createElement('li');
-  listEl.textContent = times[i] + ' ' + seaTac.results[i];
+  var listEl = document.createElement('td');
+  listEl.textContent = seaTac.results[i];
   mylist.appendChild(listEl);
 }
 
@@ -81,8 +89,8 @@ seattleCenter.cookiesSum();
 var mylist = document.getElementById('seattlecenter');
 
 for (var i = 0; i < seattleCenter.results.length; i++){
-  var listEl = document.createElement('li');
-  listEl.textContent = times[i] + ' ' + seattleCenter.results[i];
+  var listEl = document.createElement('td');
+  listEl.textContent = seattleCenter.results[i];
   mylist.appendChild(listEl);
 }
 
@@ -93,8 +101,8 @@ capitolHill.cookiesSum();
 var mylist = document.getElementById('capitolhill');
 
 for (var i = 0; i < capitolHill.results.length; i++){
-  var listEl = document.createElement('li');
-  listEl.textContent = times[i] + ' ' + capitolHill.results[i];
+  var listEl = document.createElement('td');
+  listEl.textContent = capitolHill.results[i];
   mylist.appendChild(listEl);
 }
 
@@ -105,7 +113,7 @@ alki.cookiesSum();
 var mylist = document.getElementById('alki');
 
 for (var i = 0; i < alki.results.length; i++){
-  var listEl = document.createElement('li');
-  listEl.textContent = times[i] + ' ' + alki.results[i];
+  var listEl = document.createElement('td');
+  listEl.textContent = alki.results[i];
   mylist.appendChild(listEl);
 }
