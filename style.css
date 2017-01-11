@@ -5,13 +5,16 @@ body {
   padding: 0;
 }
 
+#table {
+  margin: 0;
+  padding: 20px 200px 20px 200px;
+}
+
 table {
   width: 60%;
-  padding-right: 20%;
-  float: right;
   border: 1px solid black;
   border-collapse: collapse;
-  background-color: #fbf9f4;
+  background-color: #FFD6BE;
 }
 
 th, td {
@@ -32,24 +35,25 @@ td {
 #main-header {
   color: #19300A;
   font-family: 'Abril Fatface', cursive;
+  min-width: 1300px;
 }
 
 #logo {
   float: left;
-  width: 30%;
+  width: 400px;
 }
 
 #header {
   float: right;
-  width: 50%;
-  padding-right: 10%;
+  width: 900px;
+  padding-right: 50px;
   font-size: 3.5em;
 }
 
 #about {
   clear: both;
-  float: right;
-  width: 70%;
+  margin: 0;
+  padding: 20px 300px 20px 300px;
 }
 
 #nav-bar {
@@ -65,12 +69,29 @@ td {
   display: inline-block;
 }
 
+
 .business {
   font-family: Georgia, Times, serif;
+  display: inline-block;
   color: #41734B;
-  float: left;
-  position: fixed;
+  height: 170px;
+  width: 100%;
   bottom: 0;
+  text-align: center;
+}
+
+#locations, #contact, #guarantee {
+  display: inline-block;
+  width: 300px;
+  height: 170px;
+  text-align: left;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: top;
+}
+
+li {
+  list-style: none;
 }
 
 a:link {
@@ -79,4 +100,14 @@ a:link {
 
 a:visited {
   color: grey;
+}
+
+#coffee {
+  width: 330px;
+}
+
+#main-image {
+  margin: 0;
+  padding: 50px 400px 20px 400px;
+  text-align: center;
 }
