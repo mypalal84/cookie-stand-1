@@ -1,7 +1,113 @@
 body {
-  background: #FFB4A1;
+  background: #FFFFF8;
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-ul {
-  font-family: Verdana Arial sans-serif;
+#table {
+  margin: 0;
+  padding: 20px 200px 20px 200px;
+}
+
+table {
+  width: 60%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: #FFD6BE;
+}
+
+th, td {
+  padding: 7px 10px 10px 10px;
+  border: 1px solid black;
+}
+
+th {
+  text-transform: uppercase;
+  text: bold;
+  text-align: left;
+}
+
+td {
+  text-align: right;
+}
+
+#main-header {
+  color: #19300A;
+  font-family: 'Abril Fatface', cursive;
+  min-width: 1300px;
+}
+
+#logo {
+  float: left;
+  width: 400px;
+}
+
+#header {
+  float: right;
+  width: 900px;
+  padding-right: 50px;
+  font-size: 3.5em;
+}
+
+#about {
+  clear: both;
+  margin: 0;
+  padding: 20px 300px 20px 300px;
+}
+
+#nav-bar {
+  margin-right: 0;
+  clear: both;
+  font-size: 1.5em;
+  padding-right: 0;
+  list-style: none;
+  text-align: center;
+}
+
+#nav-bar li {
+  display: inline-block;
+}
+
+
+.business {
+  font-family: Georgia, Times, serif;
+  display: inline-block;
+  color: #41734B;
+  height: 170px;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+
+#locations, #contact, #guarantee {
+  display: inline-block;
+  width: 300px;
+  height: 170px;
+  text-align: left;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: top;
+}
+
+li {
+  list-style: none;
+}
+
+a:link {
+  color: #41734B;
+}
+
+a:visited {
+  color: grey;
+}
+
+#coffee {
+  width: 330px;
+}
+
+#main-image {
+  margin: 0;
+  padding: 50px 400px 20px 400px;
+  text-align: center;
 }
