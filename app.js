@@ -100,24 +100,44 @@ alki.cookiesSum();
 alki.render();
 
 //finding totals by hour and adding to table
-var totalsByHour = [];
-for (var i = 0; i < times.length - 1; i++){
-  var totalEachHour = firstAndPike.results[i] + seaTac.results[i] + seattleCenter.results[i] + capitolHill.results[i] + alki.results[i];
-  totalsByHour.push(totalEachHour);
-}
+// var totalsByHour = [];
+// for (var i = 0; i < times.length - 1; i++){
+//   var totalEachHour = firstAndPike.results[i] + seaTac.results[i] + seattleCenter.results[i] + capitolHill.results[i] + alki.results[i];
+//   totalsByHour.push(totalEachHour);
+// }
+//
+// function totalsHourly(){
+//   var columnTotals = document.getElementById('data-table');
+//   var rowEl = document.createElement('tr');
+//   var listEl = document.createElement('th');
+//   listEl.textContent = 'Total';
+//   rowEl.appendChild(listEl);
+//   for (var i = 0; i < totalsByHour.length; i++){
+//     var dataEl = document.createElement('td');
+//     dataEl.textContent = totalsByHour[i];
+//     rowEl.appendChild(dataEl);
+//   }
+//   columnTotals.appendChild(rowEl);
+// }
+//
+// totalsHourly();
+var newStores = [];
+var formEl = document.getElementById('new-store');
 
-function totalsHourly(){
-  var columnTotals = document.getElementById('data-table');
-  var rowEl = document.createElement('tr');
-  var listEl = document.createElement('th');
-  listEl.textContent = 'Total';
-  rowEl.appendChild(listEl);
-  for (var i = 0; i < totalsByHour.length; i++){
-    var dataEl = document.createElement('td');
-    dataEl.textContent = totalsByHour[i];
-    rowEl.appendChild(dataEl);
-  }
-  columnTotals.appendChild(rowEl);
-}
+formEl.addEventListener('submit', function(event){
+  event.preventDefault();
+  event.stopPropagation();
+  console.log(event.target.storename.value);
+  renderNewObject(event.target.mincustomers.value, event.target.maxcustomers.value, event.target.avgcookies.value, event.target.storename.value);
+}, false);
 
-totalsHourly();
+function renderNewObject(mincustomers, maxcustomers, avgcustomers, storename){
+  var object = new Store(mincustomers, maxcustomers, avgcustomers, storename);
+
+  object.cookiesPerHour();
+  object.cookiesSum();
+  object.render();
+
+  newStores.push(object);
+
+}
